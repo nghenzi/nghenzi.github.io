@@ -19,4 +19,5 @@ Documentacion DAS VM !
    func_opc
    pipe_fft_abs
    impar
+   osciloscopio
    e

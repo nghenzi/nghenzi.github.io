@@ -18,4 +18,5 @@ Documentacion DAS VM !
    funciones_bokeh
    func_opc
    pipe_fft_abs
+   impar
    e

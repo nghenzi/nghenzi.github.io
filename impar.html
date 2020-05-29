@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Impar.py &#8212; documentación de 28mayo_docs - 0.01</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="tips" href="e.html" />
+    <link rel="prev" title="md pipe_fft_abs" href="pipe_fft_abs.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo_sur.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=mvt-lsf&repo=dasvm&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Los modulos que usamos son:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">main.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="func_alarmas.html">func_alarmas.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones_grafico.html">funciones_grafico.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones_data.html">funciones_data.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering_wf.html">clustering_wf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funciones_bokeh.html">funciones_bokeh.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="func_opc.html">func_opc.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipe_fft_abs.html">md pipe_fft_abs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Impar.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e.html">tips</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pipe_fft_abs.html" title="capítulo anterior">md pipe_fft_abs</a></li>
+      <li>Next: <a href="e.html" title="próximo capítulo">tips</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="impar-py">
+<h1>Impar.py<a class="headerlink" href="#impar-py" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Se identificaron dos funciones dentro del mismo y un pequeño bloque de código pseudo-independiente.
+El bloque pseudo-independiente lo que hace es:
+- Primero crea un pipe (una tubería de lectura-escritura de datos mediante terminal de Windows) de lectura,
+el cual obtendrá los datos del láser y del EDFA mediante los datos que le llegan por el bash de Windows.</p>
+<a class="reference internal image-reference" href="_images/impar001.png"><img alt="Alternative text" src="_images/impar001.png" style="width: 500px;" /></a>
+<dl class="docutils">
+<dt>Como se puede observar, el código fue modificado para que intente abrir el pipe, en caso de no poder,</dt>
+<dd>crea valores aleatorios (los puestos no tienen mucho que ver, son de prueba, pero a su vez están correlacionados
+entre sí), para poder hacer un testeo sin un equipo de medición.</dd>
+</dl>
+<p>Seguido a esto, crea las figuras correspondientes para la visualización de las señales de energía y
+relación señal-ruido, tanto del láser como del EDFA.</p>
+<p>Subsiguiente a esto, se crean matrices de la forma 500x1 para el seteo de datos a leer y mostrar.</p>
+<a class="reference internal image-reference" href="_images/impar002.png"><img alt="Alternative text" src="_images/impar002.png" style="width: 500px;" /></a>
+<p>Se observa la creación de los gráficos correspondientes y la creación de las matrices, el tamaño de ellas aún no
+se sabe el por qué de esos tamaños.</p>
+<p>Luego se crean las variables correspondientes para el cálculo de la energía media y la relación señal-ruido tanto
+del láser como del EDFA. Se setean estas variables con parámetros aleatorios para una primera visualización y creación de los gráficos.</p>
+<a class="reference internal image-reference" href="_images/impar003.png"><img alt="Alternative text" src="_images/impar003.png" style="width: 500px;" /></a>
+<dl class="docutils">
+<dt>El tamaño de estos vectores todavía no fue identificado, pero por lo que se observó al hacer testeos con distintos valores,</dt>
+<dd>no cambia ni afecta en el sistema, pero aún así se dejó el tamaño de 200 (ya estaba definido así) y como se usaba en reiteradas
+ocasiones, se unificó a una variable.</dd>
+</dl>
+<p>Luego se identifica la primer función, animate. Esta función como particular, lo que hace es actualizar los gráficos con los
+datos que le llegan por el pipe mediante la lectura.</p>
+<p>Primero lee los datos que le llegan del láser y del EDFA por el pipe.</p>
+<p>Luego interpreta esos datos (que le llegan como string) y los transforma en enteros y los pasa a un vector.</p>
+<a class="reference internal image-reference" href="_images/impar004.png"><img alt="Alternative text" src="_images/impar004.png" style="width: 500px;" /></a>
+<p>Se observa cómo primero limpia los gráficos para una ‘actualización’, luego, se observa la modificación al código la cual intenta
+leer los datos del pipe, y, si por algún motivo no puede (que sería cuando se cierra el programa) corta el programa. A su vez, si
+desde el inicio no detecta un pipe, simula datos aleatorios para pruebas.</p>
+<p>Hace los cálculos de las desviaciones y las medias.</p>
+<p>A partir de esos datos calcula la relación señal-ruido. - Setea el rango para hacer un histograma de las energías del láser y del EDFA.</p>
+<a class="reference internal image-reference" href="_images/impar005.png"><img alt="Alternative text" src="_images/impar005.png" style="width: 500px;" /></a>
+<p>En estas líneas de código se observan los cálculos de las energías medias del láser y del edfa,
+a su vez calculándose sus relaciones señal-ruído.</p>
+<a class="reference internal image-reference" href="_images/impar006.png"><img alt="Alternative text" src="_images/impar006.png" style="width: 500px;" /></a>
+<p>Aquí se observa la creación del histograma para cada equipo (láser y edfa) en un rango para cada uno que se determina una única vez en el código.
+Luego grafica os mismos.</p>
+<a class="reference internal image-reference" href="_images/impar007.png"><img alt="Alternative text" src="_images/impar007.png" style="width: 500px;" /></a>
+<p>Aquí en cada gráfico está discriminado lo que se está ploteando, aún falta determinar de dónde o por qué se utilizan esos números.
+La siguiente función identificada es la función init, que lo único que hace es crear los gráficos iniciales para la muestra
+de datos, a su vez seteando los parámetros iniciales.</p>
+<a class="reference internal image-reference" href="_images/impar008.png"><img alt="Alternative text" src="_images/impar008.png" style="width: 500px;" /></a>
+<p>En esta función se le pasan los parámetros de figura donde se grafica, la animación, la función o parámetros iniciales,
+el intervalo de actualización y el blitting.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2020, NG.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/impar.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

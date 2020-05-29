@@ -1,0 +1,39 @@
+Documentación test_marco1_m
+***************************
+
+.. automodule:: test_marco1_m
+   :members:
+.. note::
+   Este código se lanza automáticamente desde C.
+
+El script está divido en 4 bloques
+
+Bloque 1
+=========================
+
+.. image:: _static/data_distribution.png
+  :width: 800
+  :alt: Alternative text
+
+Bloque 2
+=========================
+Texto bloque 2
+
+Bloque 3
+=========================
+Texto bloque 3
+
+Bloque 4
+=========================
+.. image:: _static/logic_flow.png
+  :width: 800
+  :alt: Alternative text
+
+Bloque 3
+=========================
+Texto bloque 3
+
+Utiliza las siguientes funciones auxiliares:
+
+.. automodule:: func_aux_main
+   :members:

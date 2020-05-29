@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>main.py &#8212; documentación de 28mayo_docs - 0.01</title>
+    <title>clustering_wf.py &#8212; documentación de 28mayo_docs - 0.01</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="func_alarmas.py" href="func_alarmas.html" />
-    <link rel="prev" title="Documentacion DAS VM !" href="index.html" />
+    <link rel="next" title="Documentación pipe_fft_abs" href="pipe_fft_abs.html" />
+    <link rel="prev" title="funciones_data.py" href="funciones_data.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -54,16 +54,11 @@
 <h3>Navegación</h3>
 <p class="caption"><span class="caption-text">Los modulos que usamos son:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">main.py</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-distribution">Data Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#logic-flow">Logic Flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#funciones">Funciones</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="func_alarmas.html">func_alarmas.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funciones_grafico.html">funciones_grafico.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funciones_data.html">funciones_data.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clustering_wf.html">clustering_wf.py</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">clustering_wf.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipe_fft_abs.html">Documentación pipe_fft_abs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e.html">tips</a></li>
 </ul>
@@ -72,8 +67,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="capítulo anterior">Documentacion DAS VM !</a></li>
-      <li>Next: <a href="func_alarmas.html" title="próximo capítulo">func_alarmas.py</a></li>
+      <li>Previous: <a href="funciones_data.html" title="capítulo anterior">funciones_data.py</a></li>
+      <li>Next: <a href="pipe_fft_abs.html" title="próximo capítulo">Documentación pipe_fft_abs</a></li>
   </ul></li>
 </ul>
 </div>
@@ -105,45 +100,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="module-main">
-<span id="main-py"></span><h1>main.py<a class="headerlink" href="#module-main" title="Enlazar permanentemente con este título">¶</a></h1>
-<span class="target" id="module-test_marco1_m"></span><div class="admonition note">
+  <div class="section" id="module-clustering_wf">
+<span id="clustering-wf-py"></span><h1>clustering_wf.py<a class="headerlink" href="#module-clustering_wf" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p class="last">Este código se lanza automáticamente desde C.</p>
-</div>
-<p>El script está divido en 4 bloques</p>
-<div class="section" id="data-distribution">
-<h2>Data Distribution<a class="headerlink" href="#data-distribution" title="Enlazar permanentemente con este título">¶</a></h2>
-<a class="reference internal image-reference" href="_images/data_distribution.png"><img alt="Alternative text" src="_images/data_distribution.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="logic-flow">
-<h2>Logic Flow<a class="headerlink" href="#logic-flow" title="Enlazar permanentemente con este título">¶</a></h2>
-<a class="reference internal image-reference" href="_images/logic_flow.png"><img alt="Alternative text" src="_images/logic_flow.png" style="width: 800px;" /></a>
-</div>
-<div class="section" id="funciones">
-<h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Utiliza las siguientes funciones auxiliares:</p>
-<span class="target" id="module-func_aux_main"></span><span class="target" id="module-func_aux_main"></span><dl class="function">
-<dt id="func_aux_main.delta_x">
-<code class="descclassname">func_aux_main.</code><code class="descname">delta_x</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#func_aux_main.delta_x" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Calcula cuantos metros corresponden a un bin de medición. Asume qFreq como 3er parámetros de linea de comandos.</p>
-<dl class="docutils">
-<dt>Returns:</dt>
-<dd>float: Valor en metros correspondiente a un bin</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="func_aux_main.th_launch">
-<code class="descclassname">func_aux_main.</code><code class="descname">th_launch</code><span class="sig-paren">(</span><em>target</em>, <em>args</em>, <em>kw={}</em>, <em>daemon=True</em><span class="sig-paren">)</span><a class="headerlink" href="#func_aux_main.th_launch" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Lanza un thread por defecto en modo daemon y sin kwargs</p>
-<dl class="docutils">
-<dt>Args:</dt>
-<dd>target (func): Función a lanzar
-args (list): Lista de argumentos</dd>
-</dl>
-</dd></dl>
-
+<p class="last">codigo del proceso de los clusters</p>
 </div>
 </div>
 
@@ -162,7 +123,7 @@ args (list): Lista de argumentos</dd>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/main.rst.txt"
+      <a href="_sources/clustering_wf.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

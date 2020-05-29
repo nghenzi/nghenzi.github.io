@@ -1,0 +1,32 @@
+main.py
+***************************
+
+.. automodule:: main
+   :members:
+.. note::
+   Este código se lanza automáticamente desde C.
+
+El script está divido en 4 bloques
+
+Data Distribution
+=========================
+
+.. image:: _static/data_distribution.png
+  :width: 800
+  :alt: Alternative text
+
+
+Logic Flow
+=========================
+
+.. image:: _static/logic_flow.png
+  :width: 800
+  :alt: Alternative text
+
+Funciones 
+=========================
+
+Utiliza las siguientes funciones auxiliares:
+
+.. automodule:: func_aux_main
+   :members:

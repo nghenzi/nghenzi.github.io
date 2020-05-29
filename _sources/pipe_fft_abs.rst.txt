@@ -1,0 +1,9 @@
+md pipe_fft_abs
+**************************
+
+
+.. automodule:: pipe_fft_abs
+   :members:
+
+.. note::
+   Este código se lanza automáticamente desde C.

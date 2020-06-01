@@ -63,6 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="func_opc.html">func_opc.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pipe_fft_abs.html">md pipe_fft_abs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="impar.html">Impar.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="osciloscopio.html">osciloscopio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="e.html">tips</a></li>
 </ul>
 
@@ -105,6 +106,78 @@
             
   <div class="section" id="module-clustering_wf">
 <span id="clustering-wf-py"></span><h1>clustering_wf.py<a class="headerlink" href="#module-clustering_wf" title="Enlazar permanentemente con este título">¶</a></h1>
+<dl class="function">
+<dt id="clustering_wf.agrupar_rango">
+<code class="descclassname">clustering_wf.</code><code class="descname">agrupar_rango</code><span class="sig-paren">(</span><em>array</em>, <em>dist</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.agrupar_rango" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.base_calc">
+<code class="descclassname">clustering_wf.</code><code class="descname">base_calc</code><span class="sig-paren">(</span><em>precomp_base=True</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.base_calc" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.bin2prog">
+<code class="descclassname">clustering_wf.</code><code class="descname">bin2prog</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.bin2prog" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Convierte de bines a [progresiva] multiplicando por dz.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.cluster_box">
+<code class="descclassname">clustering_wf.</code><code class="descname">cluster_box</code><span class="sig-paren">(</span><em>cluster</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.cluster_box" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.cluster_fit">
+<code class="descclassname">clustering_wf.</code><code class="descname">cluster_fit</code><span class="sig-paren">(</span><em>db</em>, <em>pts</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.cluster_fit" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.cluster_proc">
+<code class="descclassname">clustering_wf.</code><code class="descname">cluster_proc</code><span class="sig-paren">(</span><em>q</em>, <em>bin_filt_vect</em>, <em>eps</em>, <em>min_samples</em>, <em>plot_clusters</em>, <em>report_desc</em>, <em>log_path</em>, <em>db_ins</em>, <em>actualiza_archivo_db</em>, <em>raw_data_flag</em>, <em>raw_cluster_save</em>, <em>save_desc</em>, <em>bins_raw</em>, <em>shots_per_chunk</em>, <em>std_win</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.cluster_proc" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.cluster_report">
+<code class="descclassname">clustering_wf.</code><code class="descname">cluster_report</code><span class="sig-paren">(</span><em>vel</em>, <em>pts_cant</em>, <em>ll</em>, <em>h</em>, <em>report</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.cluster_report" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.keys_dist">
+<code class="descclassname">clustering_wf.</code><code class="descname">keys_dist</code><span class="sig-paren">(</span><em>d</em>, <em>y0</em>, <em>dist</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.keys_dist" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.lineas_importantes">
+<code class="descclassname">clustering_wf.</code><code class="descname">lineas_importantes</code><span class="sig-paren">(</span><em>pts</em>, <em>cant=30</em>, <em>dist=200</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.lineas_importantes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.plot_binary">
+<code class="descclassname">clustering_wf.</code><code class="descname">plot_binary</code><span class="sig-paren">(</span><em>q</em>, <em>ax</em>, <em>img</em>, <em>fig</em>, <em>filas_imagen_binaria</em>, <em>mad_data</em>, <em>median_data</em>, <em>base_fin</em>, <em>bin_filt_vect</em>, <em>eps</em>, <em>min_samples</em>, <em>q_db</em>, <em>plot_clusters</em>, <em>report_desc</em>, <em>save_desc</em>, <em>raw_data_flag</em>, <em>raw_cluster_save</em>, <em>bins_raw</em>, <em>shots_per_chunk</em>, <em>std_win</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.plot_binary" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.prog2bin">
+<code class="descclassname">clustering_wf.</code><code class="descname">prog2bin</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.prog2bin" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Convierte de [progresiva] a bines multiplicando por dz.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.rep_dicc_watch">
+<code class="descclassname">clustering_wf.</code><code class="descname">rep_dicc_watch</code><span class="sig-paren">(</span><em>evt_dicc</em>, <em>q_db</em>, <em>largest_wf_key</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.rep_dicc_watch" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.ts_to_stringDate">
+<code class="descclassname">clustering_wf.</code><code class="descname">ts_to_stringDate</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.ts_to_stringDate" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="clustering_wf.update_image">
+<code class="descclassname">clustering_wf.</code><code class="descname">update_image</code><span class="sig-paren">(</span><em>image</em>, <em>new_rows</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.update_image" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">codigo del proceso de los clusters</p>

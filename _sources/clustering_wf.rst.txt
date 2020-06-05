@@ -8,3 +8,25 @@ clustering_wf.py
 
 .. note::
    codigo del proceso de los clusters
+
+
+
+Modulos de clustering_wf
+=========================
+
+Utiliza las siguientes funciones auxiliares:
+
+util_das_fut
+=========================
+.. automodule:: util_das_fut
+   :members:
+   :undoc-members:
+
+
+Mientras que para el manejo de la base de datos
+
+database
+=========================
+.. automodule:: db_func
+   :members:
+   :undoc-members:

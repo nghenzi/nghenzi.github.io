@@ -68,7 +68,7 @@ inicializar los gráficos donde se verá el osciloscopio.
   :alt: Alternative text
 
 
-  .. image:: _static/osci007.png
+.. image:: _static/osci007.png
     :width: 500
     :alt: Alternative text
 

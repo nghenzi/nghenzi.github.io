@@ -9,6 +9,7 @@
     <title>funciones_grafico.py &#8212; documentación de 28mayo_docs - 0.01</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -106,6 +107,48 @@
             
   <div class="section" id="module-funciones_grafico">
 <span id="funciones-grafico-py"></span><h1>funciones_grafico.py<a class="headerlink" href="#module-funciones_grafico" title="Enlazar permanentemente con este título">¶</a></h1>
+<dl class="function">
+<dt id="funciones_grafico.get_block">
+<code class="descclassname">funciones_grafico.</code><code class="descname">get_block</code><span class="sig-paren">(</span><em>data_queue</em>, <em>block_size</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.get_block" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Escribe y devuelve el array block, de block_size filas, extrae los datos de data_queue (mientras lo copia los elimina de data_queue)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.new_folder_date">
+<code class="descclassname">funciones_grafico.</code><code class="descname">new_folder_date</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.new_folder_date" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Crea una nueva carpeta con la fecha actual si es que no existe ya</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.parse_markers">
+<code class="descclassname">funciones_grafico.</code><code class="descname">parse_markers</code><span class="sig-paren">(</span><em>archivo_punzados</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.parse_markers" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Toma el archivo punzados, que tiene descripciones de la zona del ducto, y escibe la distancia como valores numericos</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.plot_setup">
+<code class="descclassname">funciones_grafico.</code><code class="descname">plot_setup</code><span class="sig-paren">(</span><em>save_figure</em>, <em>data_queue</em>, <em>bins_plot</em>, <em>delta_x</em>, <em>plots_per_second</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.plot_setup" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Aqui se actualiza la imagen del waterfall del sistema (con la libraria de animation), y dentro de esta funcion se ejecutan funciones (show_lines, update_clim_max, prog2bin y update_plot), en particular la funcion update_plot actualiza el waterfall de la web y cada segundosEsperaCap guarda una imagen</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.ts_to_stringDate">
+<code class="descclassname">funciones_grafico.</code><code class="descname">ts_to_stringDate</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.ts_to_stringDate" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>convierte de timestamp a un string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.update_image">
+<code class="descclassname">funciones_grafico.</code><code class="descname">update_image</code><span class="sig-paren">(</span><em>image</em>, <em>new_rows</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.update_image" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Toma la imagen antigua (waterfall), appendea las nuevas filas (new_rows) y elimina las filas (new_rows) mas antiguas</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="funciones_grafico.valores_copados">
+<code class="descclassname">funciones_grafico.</code><code class="descname">valores_copados</code><span class="sig-paren">(</span><em>vec</em>, <em>factor_de_copadez=50.0</em><span class="sig-paren">)</span><a class="headerlink" href="#funciones_grafico.valores_copados" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>No se esta usando en el momento, pero entrando un vector devuelve el mismo pero con valores que son multiplos de factor_de copadez</p>
+</dd></dl>
+
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">codigo para plotear el blue WF y save_figure switch.</p>

@@ -9,6 +9,7 @@
     <title>clustering_wf.py &#8212; documentación de 28mayo_docs - 0.01</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -161,8 +162,16 @@ return pts[class_member_mask],cs_cnt,not_cs_cnt,ajuste</p>
 <dl class="function">
 <dt id="clustering_wf.cluster_proc">
 <code class="descclassname">clustering_wf.</code><code class="descname">cluster_proc</code><span class="sig-paren">(</span><em>q</em>, <em>bin_filt_vect</em>, <em>eps</em>, <em>min_samples</em>, <em>plot_clusters</em>, <em>report_desc</em>, <em>log_path</em>, <em>db_ins</em>, <em>actualiza_archivo_db</em>, <em>raw_data_flag</em>, <em>raw_cluster_save</em>, <em>save_desc</em>, <em>bins_raw</em>, <em>shots_per_chunk</em>, <em>std_win</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.cluster_proc" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>proceso que adquiere los datos de la cola de distribucion y lanza
-los threads del binario y de la base de datos</p>
+<dd><p>Proceso que adquiere los datos de la cola de distribucion y lanza
+los threads del binario y de la base de datos.</p>
+<p>Pasos.</p>
+<ol class="arabic simple">
+<li>Primero calcula la linea de base en funcion del zscore.</li>
+<li>Plotea el binario y luego queda congelado con plt.show</li>
+<li>Lanza thread 1 –&gt; funcion db_rep_th</li>
+<li>Lanza thread 2 –&gt; funcion plot_binary</li>
+</ol>
+<p>Ver la parte importante es donde se ejecuta plot binary</p>
 </dd></dl>
 
 <dl class="function">
@@ -191,9 +200,10 @@ Solo esta probada en los primeros kms.</p>
 <dl class="function">
 <dt id="clustering_wf.plot_binary">
 <code class="descclassname">clustering_wf.</code><code class="descname">plot_binary</code><span class="sig-paren">(</span><em>q</em>, <em>ax</em>, <em>img</em>, <em>fig</em>, <em>filas_imagen_binaria</em>, <em>mad_data</em>, <em>median_data</em>, <em>base_fin</em>, <em>bin_filt_vect</em>, <em>eps</em>, <em>min_samples</em>, <em>q_db</em>, <em>plot_clusters</em>, <em>report_desc</em>, <em>save_desc</em>, <em>raw_data_flag</em>, <em>raw_cluster_save</em>, <em>bins_raw</em>, <em>shots_per_chunk</em>, <em>std_win</em><span class="sig-paren">)</span><a class="headerlink" href="#clustering_wf.plot_binary" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><blockquote>
-<div>Thread principal de calculo y de actualizacion de los plots binarios.
-Thread derivado de cluster_proc.</div></blockquote>
+<dd><p>Thread principal de calculo y de actualizacion de los plots binarios.
+Thread derivado de cluster_proc.</p>
+<a class="reference internal image-reference" href="_images/plot_binary_00.png"><img alt="Alternative text" src="_images/plot_binary_00.png" style="width: 800px;" /></a>
+<p>Se propone cambiar la estructura actual por la siguiente:</p>
 <a class="reference internal image-reference" href="_images/plot_binary.png"><img alt="Alternative text" src="_images/plot_binary.png" style="width: 800px;" /></a>
 </dd></dl>
 
@@ -238,27 +248,39 @@ la cantidad de filas de new_rows.</p>
 <dl class="function">
 <dt id="util_das_fut.bin2prog">
 <code class="descclassname">util_das_fut.</code><code class="descname">bin2prog</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#util_das_fut.bin2prog" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Convierte de bines a progresiva multiplicando por dz.
+Toma como referencia la circunvalacion, correspondiente al pk342.</p>
+<p>Ejemplo:
+En el bin 2500, se realiza la siguiente cuenta ((2500*2.03)-4232)/1000.+342,
+resultando en un valor de progresiva de 342.82</p>
+<p>Atributos:
+b : bin en columnas del waterfall.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="util_das_fut.dq_extract">
 <code class="descclassname">util_das_fut.</code><code class="descname">dq_extract</code><span class="sig-paren">(</span><em>dq</em>, <em>st</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#util_das_fut.dq_extract" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>auxiliar function para salvar la porcion de dato crudo necesario</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="util_das_fut.event_save">
 <code class="descclassname">util_das_fut.</code><code class="descname">event_save</code><span class="sig-paren">(</span><em>event_data</em><span class="sig-paren">)</span><a class="headerlink" href="#util_das_fut.event_save" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Salva dato crudo with a cPickle</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="util_das_fut.nocopy_roll_update">
 <code class="descclassname">util_das_fut.</code><code class="descname">nocopy_roll_update</code><span class="sig-paren">(</span><em>matrix</em>, <em>new_data</em>, <em>roll=1000</em>, <em>cuts=100</em><span class="sig-paren">)</span><a class="headerlink" href="#util_das_fut.nocopy_roll_update" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>solo rollea para arriba y filas
+roll es la cantidad de filas de new_data</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="util_das_fut.save_event">
 <code class="descclassname">util_das_fut.</code><code class="descname">save_event</code><span class="sig-paren">(</span><em>x_ini</em>, <em>x_fin</em>, <em>raw_data_dq</em>, <em>bins_raw</em>, <em>std_data</em>, <em>std_win</em>, <em>ts_event</em>, <em>extra_bins_each_side=100</em><span class="sig-paren">)</span><a class="headerlink" href="#util_das_fut.save_event" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>thread to salvar evento de dato crudo</p>
+</dd></dl>
 
 <p>Mientras que para el manejo de la base de datos</p>
 </div>
@@ -269,22 +291,34 @@ la cantidad de filas de new_rows.</p>
 <dl class="function">
 <dt id="db_func.bin2prog">
 <code class="descclassname">db_func.</code><code class="descname">bin2prog</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.bin2prog" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Convierte de bines a progresiva multiplicando por dz.
+Toma como referencia la circunvalacion, correspondiente al pk342.</p>
+<p>Ejemplo:
+En el bin 2500, se realiza la siguiente cuenta ((2500*2.03)-4232)/1000.+342,
+resultando en un valor de progresiva de 342.82</p>
+<p>Atributos:
+b : bin en columnas del waterfall.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="db_func.db_rep_th">
 <code class="descclassname">db_func.</code><code class="descname">db_rep_th</code><span class="sig-paren">(</span><em>q</em>, <em>actualiza_archivo_db</em>, <em>db_ins</em>, <em>log_path</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.db_rep_th" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>thread principal donde va llamando a update db y
+insert db to actualizar la base de datos</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="db_func.handle_report_dicc_from_cluster">
 <code class="descclassname">db_func.</code><code class="descname">handle_report_dicc_from_cluster</code><span class="sig-paren">(</span><em>ll</em>, <em>db_dicc</em>, <em>st</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.handle_report_dicc_from_cluster" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>maneja los reportes. Si esta reportado o no, decide si
+va a enviarlo a la base de datos</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="db_func.insert_report">
 <code class="descclassname">db_func.</code><code class="descname">insert_report</code><span class="sig-paren">(</span><em>prog</em>, <em>evt</em>, <em>ts</em>, <em>inten_max</em>, <em>st_n=1</em>, <em>id_r=None</em>, <em>db_ins=True</em>, <em>log_path=None</em>, <em>db_on=False</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.insert_report" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>inserta reporte en la base de datos</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="db_func.log_sample">
@@ -294,12 +328,15 @@ la cantidad de filas de new_rows.</p>
 <dl class="function">
 <dt id="db_func.reporte_db">
 <code class="descclassname">db_func.</code><code class="descname">reporte_db</code><span class="sig-paren">(</span><em>st</em>, <em>st_cant</em>, <em>velocidad</em>, <em>good_fit</em>, <em>ll</em>, <em>h</em>, <em>w</em>, <em>q_db</em>, <em>report_dicc_circula</em>, <em>report_desc</em>, <em>save_desc</em>, <em>inten_max</em>, <em>record_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.reporte_db" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>reglas de criterio para definir que tipo de vehiculo es</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="db_func.update_db_file">
 <code class="descclassname">db_func.</code><code class="descname">update_db_file</code><span class="sig-paren">(</span><em>dbfilepath</em><span class="sig-paren">)</span><a class="headerlink" href="#db_func.update_db_file" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>serializa la base de datos a un archivo
+denominado dbfile</p>
+</dd></dl>
 
 </div>
 </div>

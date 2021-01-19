@@ -1,9 +1,0 @@
-funciones_bokeh.py
-**************************
-
-
-.. automodule:: funciones_bokeh
-   :members:
-
-.. note::
-   web data sessions management

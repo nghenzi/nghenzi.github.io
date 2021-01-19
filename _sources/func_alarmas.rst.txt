@@ -1,9 +1,0 @@
-func_alarmas.py
-**************************
-
-
-.. automodule:: func_alarmas
-   :members:
-   
-.. note::
-   Este código se lanza automáticamente desde C.

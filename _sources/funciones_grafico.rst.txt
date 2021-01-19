@@ -1,7 +1,0 @@
-funciones_grafico.py
-***************************
-
-.. automodule:: funciones_grafico
-   :members:
-.. note::
-   codigo para plotear el blue WF y save_figure switch.

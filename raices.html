@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>Integrantes Red Raíces de Científicos en el exterior</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.holoviz.org/panel/1.2.3/dist/images/apple-touch-icon.png">
+    <link rel="icon" href="https://cdn.holoviz.org/panel/1.2.3/dist/images/favicon.ico" type="">
+    <meta name="name" content="Integrantes Red Raíces de Científicos en el exterior">
+    <style>
+      html, body {
+	display: flow-root;
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+<style type="text/css">
+:host(.pn-loading),
+.pn-loading {
+  overflow: hidden;
+}
+
+:host(.pn-loading):before,
+.pn-loading:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  border-width: 1px;
+  cursor: progress;
+}
+
+:host(.pn-loading) .pn-loading-msg,
+.pn-loading .pn-loading-msg {
+  position: absolute;
+  top: 72%;
+  font-size: 2em;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=");
+  background-size: auto calc(min(50%, 400px));
+}
+</style><script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.2.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"></script>
+<script type="text/javascript" src="https://cdn.holoviz.org/panel/1.2.3/dist/panel.min.js"></script>
+
+<script type="text/javascript">
+  Bokeh.set_log_level("info");
+</script>
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.2.3/dist/bundled/material-components-web@7.0.0/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&display=block">
+    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.2.3/dist/bundled/theme/default.css">
+    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.2.3/dist/bundled/theme/material_variables.css">
+    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.2.3/dist/bundled/materialtemplate/material.css">
+    <style type="text/css">
+    
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=");
+  background-size: auto calc(min(50%, 400px));
+}
+    </style>
+
+    <style>
+      :root {
+	  --header-background: var(--design-primary-color, var(--panel-primary-color));
+	  --header-color: var(--design-primary-text-color, var(--panel-on-primary-color));
+	  --sidebar-width: 370px;
+      }
+      #header {
+          --mdc-theme-background: var(--header-background);
+          --mdc-theme-on-background: var(--header-color);
+	  background-color: var(--header-background);
+	  color: var(--header-color);
+      }
+      .mdc-drawer {
+	  width: var(--sidebar-width) !important;
+      }
+      .mdc-drawer.mdc-drawer--open:not(.mdc-drawer--closing)+.mdc-drawer-app-content {
+	  margin-left: var(--sidebar-width) !important;
+      }
+    </style>
+
+    <!-- Template JS -->
+    <script src="https://cdn.holoviz.org/panel/1.2.3/dist/bundled/material-components-web@7.0.0/dist/material-components-web.min.js"></script>
+  </head>
+  <body class="pn-loading pn-arc">
+<div class="mdc-typography" id="container">
+  <header class="mdc-top-app-bar app-bar mdc-top-app-bar--fixed" id="header">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+	<div class="title-bar">
+          <span class="mdc-top-app-bar__title app-header">
+<a class="title" href="" >&nbsp;Integrantes Red Raíces de Científicos en el exterior</a>          </span>
+          <div id="header-items">
+          </div>
+        </div>
+      </section>
+      <div class="pn-busy-container">
+	<div id="b2e175ee-6c47-4457-8224-f5779b0429b2" data-root-id="p1016" style="display: contents;"></div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+    <main class="main-content" id="main">
+      <div id="c317d7ea-f6e7-436d-bfdc-eb0d451bd149" data-root-id="p1018" style="display: contents;"></div>
+    </main>
+
+    <div id="pn-Modal" class="mdc-dialog">
+      <div class="mdc-dialog__container">
+	<div class="mdc-dialog__surface" role="alertdialog" aria-modal="true">
+	  <div class="mdc-dialog__content" id="my-dialog-content">
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    var modal_el = document.getElementById("pn-Modal");
+    var modal = new mdc.dialog.MDCDialog(modal_el);
+
+    window.onclick = function(event) {
+      if (event.target == modal_el) {
+	modal.close();
+      }
+    }
+  </script>
+
+  <div id="d11cc35e-82aa-4993-ba90-6ae1a0bab7c2" data-root-id="p1009" style="display: contents;"></div>
+  <div id="d80ddf89-9b98-4fe0-9eb9-b601787b087d" data-root-id="p1012" style="display: contents;"></div>
+  <div id="aaaa6519-24ff-4496-a429-94c44ee2fb62" data-root-id="p1002" style="display: contents;"></div>
+  <div id="efa4d070-0230-4c70-aee4-a0edeccd2c32" data-root-id="p1013" style="display: contents;"></div>
+</div>
+  
+    <script type="text/javascript">
+    async function main() {
+      let pyodide = await loadPyodide();
+      await pyodide.loadPackage("micropip");
+      await pyodide.runPythonAsync(`
+        import micropip
+        await micropip.install(['https://cdn.holoviz.org/panel/1.2.3/dist/wheels/bokeh-3.2.2-py3-none-any.whl', 'https://cdn.holoviz.org/panel/1.2.3/dist/wheels/panel-1.2.3-py3-none-any.whl', 'pyodide-http==0.2.1', 'folium', 'pandas']);
+      `);
+      code = `
+    import asyncio
+
+    from panel.io.pyodide import init_doc, write_doc
+
+    init_doc()
+
+    import os
+    import folium
+    import panel as pn
+    import pandas as pd
+    # from bng_to_latlon import OSGB36toWGS84
+    from folium.plugins import MarkerCluster
+    # Load map centred on Colchester
+    raices = folium.Map(location=[51.8860942,0.8336077], 
+        zoom_start=2, control_scale=True)
+     
+
+
+    # # Load locally stored colchester public toilets data
+    scientists = pd.read_csv("mapa_raices.csv")
+     
+
+    # print  (scientists  )
+    groups = []
+
+
+    for red, group in scientists.groupby('Red'):
+        # groups.append(folium.FeatureGroup(red).add_to(raices))
+        groups.append(MarkerCluster())
+        for sci in group.iterrows():
+            name, lat, long, disciplina, link =  (sci[1]['Nombre'], sci[1]['lat'],sci[1]['long'],
+            sci[1]['disciplina'], sci[1]['link']
+            )
+            # folium.Marker((lat, long), icon=folium.Icon("red")).add_to(groups[-1])
+            groups[-1].add_child(folium.Marker((lat, long), icon=folium.Icon("red")))
+        raices.add_child(groups[-1])
+
+        print()
+
+    # print (scientists) 
+    # # create a marker cluster called "Public toilet cluster"
+    # marker_cluster = folium.MarkerCluster("Redes").add_to(uk)
+     
+    # # #add a marker for each toilet, add it to the cluster, not the map
+    # for each in scientists.iterrows():
+    #      popup = 'Add <b>test</b>'
+    #      print(list([each['lat'],each['long']]))
+         
+    #      folium.Marker(list([each['lat'],each['long']]), popup=popup).add_to(marker_cluster)
+     
+    # # we can also add a marker directly to the map, outside of the clustering
+    # folium.Marker([51.8860942,0.8336077], popup="not included in marker cluster",icon=folium.Icon(color='red',icon='info-sign')).add_to(uk)
+     
+    # # Save map
+    # # uk.save("./scientist.html")
+
+    folium_pane = pn.pane.plot.Folium(raices, height=600)
+
+    template = pn.template.MaterialTemplate(
+        title='Integrantes Red Raíces de Científicos en el exterior',
+        # sidebar=[freq, phase],
+    )
+
+    template.main.append(folium_pane)
+
+    template.servable()
+
+    # from bokeh.resources import INLINE
+    # template.save('raices.html', resources=INLINE)
+
+
+
+
+
+    await write_doc()`
+      await pyodide.runPythonAsync(code);
+    }
+    main();
+    </script>
+    <script type="application/json" id="p1036">
+      {"54b5e942-7279-491b-8d0a-541282631fee":{"version":"3.2.2","title":"Integrantes Red Ra\u00edces de Cient\u00edficos en el exterior","roots":[{"type":"object","name":"panel.models.location.Location","id":"p1002","attributes":{"name":"location","reload":false}},{"type":"object","name":"panel.models.markup.HTML","id":"p1009","attributes":{"name":"js_area","stylesheets":["\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\");\n  background-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"p1024","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/css/loading.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1021","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/bundled/theme/material.css"}}],"width":0,"height":0,"margin":0,"sizing_mode":"fixed","align":"start","disable_math":true}},{"type":"object","name":"panel.models.reactive_html.ReactiveHTML","id":"p1012","attributes":{"name":"actions","subscribed_events":{"type":"set","entries":["dom_event"]},"stylesheets":["\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\");\n  background-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"p1025","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/css/loading.css"}},{"id":"p1021"}],"margin":0,"align":"start","data":{"type":"object","name":"MaterialTemplateActions1","id":"p1010","attributes":{"name":"MaterialTemplateActions00121"}},"scripts":{"type":"map","entries":[["open_modal",["modal.open();\nsetTimeout(function() {{\n  window.dispatchEvent(new Event(&amp;#x27;resize&amp;#x27;));\n}}, 200);"]],["close_modal",["modal.close()"]]]}}},{"type":"object","name":"panel.models.browser.BrowserInfo","id":"p1013","attributes":{"name":"browser_info"}},{"type":"object","name":"panel.models.markup.HTML","id":"p1016","attributes":{"name":"busy_indicator","css_classes":["loader","light"],"stylesheets":[":host { --loading-spinner-size: 20px; }","\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\");\n  background-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"p1026","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/css/loading.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1027","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/css/loadingspinner.css"}},{"id":"p1021"}],"min_width":20,"min_height":20,"margin":[5,10],"align":"start"}},{"type":"object","name":"panel.models.markup.HTML","id":"p1018","attributes":{"name":"2119735623184","tags":["main"],"stylesheets":["\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\");\n  background-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"p1028","attributes":{"url":"https://cdn.holoviz.org/panel/1.2.3/dist/css/loading.css"}},{"id":"p1021"}],"height":600,"margin":[5,10],"sizing_mode":"stretch_width","align":"start","text":"&amp;lt;div style=&amp;quot;width:100%;height:100%&amp;quot;&amp;gt;&amp;lt;div style=&amp;quot;position:relative;width:100%;height:100%;padding-bottom:0%;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;color:#565656&amp;quot;&amp;gt;Make this Notebook Trusted to load map: File -&amp;gt; Trust Notebook&amp;lt;/span&amp;gt;&amp;lt;iframe srcdoc=&amp;quot;&amp;amp;lt;!DOCTYPE html&amp;amp;gt;\n&amp;amp;lt;html&amp;amp;gt;\n&amp;amp;lt;head&amp;amp;gt;\n    \n    &amp;amp;lt;meta http-equiv=&amp;amp;quot;content-type&amp;amp;quot; content=&amp;amp;quot;text/html; charset=UTF-8&amp;amp;quot; /&amp;amp;gt;\n    \n        &amp;amp;lt;script&amp;amp;gt;\n            L_NO_TOUCH = false;\n            L_DISABLE_3D = false;\n        &amp;amp;lt;/script&amp;amp;gt;\n    \n    &amp;amp;lt;style&amp;amp;gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&amp;amp;lt;/style&amp;amp;gt;\n    &amp;amp;lt;style&amp;amp;gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&amp;amp;lt;/style&amp;amp;gt;\n    &amp;amp;lt;script src=&amp;amp;quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;\n    &amp;amp;lt;script src=&amp;amp;quot;https://code.jquery.com/jquery-1.12.4.min.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;\n    &amp;amp;lt;script src=&amp;amp;quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;\n    &amp;amp;lt;script src=&amp;amp;quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&amp;amp;quot;/&amp;amp;gt;\n    \n            &amp;amp;lt;meta name=&amp;amp;quot;viewport&amp;amp;quot; content=&amp;amp;quot;width=device-width,\n                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&amp;amp;quot; /&amp;amp;gt;\n            &amp;amp;lt;style&amp;amp;gt;\n                #map_bba5205b15a923127ac29bfbc6d25155 {\n                    position: relative;\n                    width: 100.0%;\n                    height: 100.0%;\n                    left: 0.0%;\n                    top: 0.0%;\n                }\n                .leaflet-container { font-size: 1rem; }\n            &amp;amp;lt;/style&amp;amp;gt;\n        \n    &amp;amp;lt;script src=&amp;amp;quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;link rel=&amp;amp;quot;stylesheet&amp;amp;quot; href=&amp;amp;quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css&amp;amp;quot;/&amp;amp;gt;\n&amp;amp;lt;/head&amp;amp;gt;\n&amp;amp;lt;body&amp;amp;gt;\n    \n    \n            &amp;amp;lt;div class=&amp;amp;quot;folium-map&amp;amp;quot; id=&amp;amp;quot;map_bba5205b15a923127ac29bfbc6d25155&amp;amp;quot; &amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\n        \n&amp;amp;lt;/body&amp;amp;gt;\n&amp;amp;lt;script&amp;amp;gt;\n    \n    \n            var map_bba5205b15a923127ac29bfbc6d25155 = L.map(\n                &amp;amp;quot;map_bba5205b15a923127ac29bfbc6d25155&amp;amp;quot;,\n                {\n                    center: [51.8860942, 0.8336077],\n                    crs: L.CRS.EPSG3857,\n                    zoom: 2,\n                    zoomControl: true,\n                    preferCanvas: false,\n                }\n            );\n            L.control.scale().addTo(map_bba5205b15a923127ac29bfbc6d25155);\n\n            \n\n        \n    \n            var tile_layer_d45911b20d7f0b2371554488fd620446 = L.tileLayer(\n                &amp;amp;quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&amp;amp;quot;,\n                {&amp;amp;quot;attribution&amp;amp;quot;: &amp;amp;quot;Data by \\u0026copy; \\u003ca target=\\&amp;amp;quot;_blank\\&amp;amp;quot; href=\\&amp;amp;quot;http://openstreetmap.org\\&amp;amp;quot;\\u003eOpenStreetMap\\u003c/a\\u003e, under \\u003ca target=\\&amp;amp;quot;_blank\\&amp;amp;quot; href=\\&amp;amp;quot;http://www.openstreetmap.org/copyright\\&amp;amp;quot;\\u003eODbL\\u003c/a\\u003e.&amp;amp;quot;, &amp;amp;quot;detectRetina&amp;amp;quot;: false, &amp;amp;quot;maxNativeZoom&amp;amp;quot;: 18, &amp;amp;quot;maxZoom&amp;amp;quot;: 18, &amp;amp;quot;minZoom&amp;amp;quot;: 0, &amp;amp;quot;noWrap&amp;amp;quot;: false, &amp;amp;quot;opacity&amp;amp;quot;: 1, &amp;amp;quot;subdomains&amp;amp;quot;: &amp;amp;quot;abc&amp;amp;quot;, &amp;amp;quot;tms&amp;amp;quot;: false}\n            ).addTo(map_bba5205b15a923127ac29bfbc6d25155);\n        \n    \n            var marker_cluster_353d34e91fb68d8b86ab2201a11a2c2b = L.markerClusterGroup(\n                {}\n            );\n            map_bba5205b15a923127ac29bfbc6d25155.addLayer(marker_cluster_353d34e91fb68d8b86ab2201a11a2c2b);\n        \n    \n            var marker_f64269302a84368086a9c3007ecd4775 = L.marker(\n                [52.0, 5.0],\n                {}\n            ).addTo(marker_cluster_353d34e91fb68d8b86ab2201a11a2c2b);\n        \n    \n            var icon_20d6b380444f0d750797f66e11dd65cd = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_f64269302a84368086a9c3007ecd4775.setIcon(icon_20d6b380444f0d750797f66e11dd65cd);\n        \n    \n            var marker_6b7926974d2bebfc6d2c0016f864edb6 = L.marker(\n                [52.6, 5.5],\n                {}\n            ).addTo(marker_cluster_353d34e91fb68d8b86ab2201a11a2c2b);\n        \n    \n            var icon_e6c3b2cbb7bc8ebe7840750ae7ddaa1f = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_6b7926974d2bebfc6d2c0016f864edb6.setIcon(icon_e6c3b2cbb7bc8ebe7840750ae7ddaa1f);\n        \n    \n            var marker_cluster_e63169c3dd486cb2957263368cd60807 = L.markerClusterGroup(\n                {}\n            );\n            map_bba5205b15a923127ac29bfbc6d25155.addLayer(marker_cluster_e63169c3dd486cb2957263368cd60807);\n        \n    \n            var marker_4924cf01deda87a36a47eb8e6f754278 = L.marker(\n                [37.15, 126.45],\n                {}\n            ).addTo(marker_cluster_e63169c3dd486cb2957263368cd60807);\n        \n    \n            var icon_82d57ee6e081e48a4798ca903f8e876e = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_4924cf01deda87a36a47eb8e6f754278.setIcon(icon_82d57ee6e081e48a4798ca903f8e876e);\n        \n    \n            var marker_cluster_327b98200c47286c785abbd645d681fb = L.markerClusterGroup(\n                {}\n            );\n            map_bba5205b15a923127ac29bfbc6d25155.addLayer(marker_cluster_327b98200c47286c785abbd645d681fb);\n        \n    \n            var marker_63114470001a6c24c8a2afa4314581ca = L.marker(\n                [37.0, -90.0],\n                {}\n            ).addTo(marker_cluster_327b98200c47286c785abbd645d681fb);\n        \n    \n            var icon_eac8686bd98ac55b9e6aa713243ee418 = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_63114470001a6c24c8a2afa4314581ca.setIcon(icon_eac8686bd98ac55b9e6aa713243ee418);\n        \n    \n            var marker_42febb8d660bfd1523c09f4979d5e801 = L.marker(\n                [38.0, -85.0],\n                {}\n            ).addTo(marker_cluster_327b98200c47286c785abbd645d681fb);\n        \n    \n            var icon_2a25fc51b9527a5345bc8004346021fe = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_42febb8d660bfd1523c09f4979d5e801.setIcon(icon_2a25fc51b9527a5345bc8004346021fe);\n        \n    \n            var marker_d09ae24f29ed9d3107186ab848d9ada9 = L.marker(\n                [37.5, -83.0],\n                {}\n            ).addTo(marker_cluster_327b98200c47286c785abbd645d681fb);\n        \n    \n            var icon_768d109e5fdef8f6ff09fc7b7337bd7a = L.AwesomeMarkers.icon(\n                {&amp;amp;quot;extraClasses&amp;amp;quot;: &amp;amp;quot;fa-rotate-0&amp;amp;quot;, &amp;amp;quot;icon&amp;amp;quot;: &amp;amp;quot;info-sign&amp;amp;quot;, &amp;amp;quot;iconColor&amp;amp;quot;: &amp;amp;quot;white&amp;amp;quot;, &amp;amp;quot;markerColor&amp;amp;quot;: &amp;amp;quot;red&amp;amp;quot;, &amp;amp;quot;prefix&amp;amp;quot;: &amp;amp;quot;glyphicon&amp;amp;quot;}\n            );\n            marker_d09ae24f29ed9d3107186ab848d9ada9.setIcon(icon_768d109e5fdef8f6ff09fc7b7337bd7a);\n        \n&amp;amp;lt;/script&amp;amp;gt;\n&amp;amp;lt;/html&amp;amp;gt;&amp;quot; style=&amp;quot;position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;&amp;quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;","disable_math":true}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1036').textContent;
+              const render_items = [{"docid":"54b5e942-7279-491b-8d0a-541282631fee","roots":{"p1002":"aaaa6519-24ff-4496-a429-94c44ee2fb62","p1009":"d11cc35e-82aa-4993-ba90-6ae1a0bab7c2","p1012":"d80ddf89-9b98-4fe0-9eb9-b601787b087d","p1013":"efa4d070-0230-4c70-aee4-a0edeccd2c32","p1016":"b2e175ee-6c47-4457-8224-f5779b0429b2","p1018":"c317d7ea-f6e7-436d-bfdc-eb0d451bd149"},"root_ids":["p1002","p1009","p1012","p1013","p1016","p1018"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
